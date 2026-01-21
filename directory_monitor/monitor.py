@@ -45,3 +45,18 @@ class DirectoryMonitor:
                     if metadata:
                         current_state[filename] = metadata
         self.files_state = current_state
+
+    def check_changes(self):
+        current_files = set(os.listdir(self.path_to_watch))
+        monitored_files = set(self.files_state.keys())
+        logs = []
+
+        # check created
+        added_files = current_files - monitored_files
+        for filename in added_files:
+            filepath = os.path.join(self.path_to_watch, filename)
+            if os.path.isfile(filepath):
+                meta = self.get_metadata(filepath)
+                if meta:
+                    logs.append(f"[CREATED] {filename} | Size: {meta['size']}B | Time: {meta['mtime_str']}")
+                    self.files_state[filename] = meta
