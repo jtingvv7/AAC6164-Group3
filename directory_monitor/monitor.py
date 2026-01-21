@@ -28,7 +28,7 @@ class DirectoryMonitor:
                 "filename": filename,
                 "size": stats.st_size,
                 "permissions": oct(stats.st_mode)[-3:],
-                "owner": owner/group,
+                "owner": owner,
                 "mtime": stats.st_mtime,
                 "mtime_str": time.ctime(stats.st_mtime)
             }
