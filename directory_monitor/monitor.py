@@ -60,3 +60,21 @@ class DirectoryMonitor:
                 if meta:
                     logs.append(f"[CREATED] {filename} | Size: {meta['size']}B | Time: {meta['mtime_str']}")
                     self.files_state[filename] = meta
+
+        # check deleted
+        removed_files = monitored_files - current_files
+        for filename in removed_files:
+            logs.append(f"[DELETED] {filename} | Detected at: {time.ctime()}")
+            del self.files_state[filename]
+
+        # check modified
+        common_files = current_files & monitored_files
+        for filename in common_files:
+            filepath = os.path.join(self.path_to_watch, filename)
+            if os.path.isfile(filepath):
+                new_meta = self.get_metadata(filepath)
+                old_meta = self.files_state.get(filename)
+                if new_meta and old_meta and new_meta['mtime'] != old_meta['mtime']:
+                    logs.append(f"[MODIFIED] {filename} | New Time: {new_meta['mtime_str']}")
+                    self.files_state[filename] = new_meta
+        return logs
