@@ -22,7 +22,7 @@ def get_file_metadata(file_path):
         else:
             file_type = "Other"
 
-        # get owner group
+        # get owner & group
         try:
             owner = pwd.getpwuid(file_stat.st_uid).pw_name
             group = grp.getgrgid(file_stat.st_gid).gr_name
