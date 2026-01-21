@@ -34,3 +34,4 @@ class DirectoryMonitor:
             }
         except FileNotFoundError:
             return None
+
