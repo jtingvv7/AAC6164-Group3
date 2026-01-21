@@ -28,10 +28,20 @@ class DirectoryMonitor:
                 "filename": filename,
                 "size": stats.st_size,
                 "permissions": oct(stats.st_mode)[-3:],
-                "owner": owner,
+                "owner": owner/group,
                 "mtime": stats.st_mtime,
                 "mtime_str": time.ctime(stats.st_mtime)
             }
         except FileNotFoundError:
             return None
 
+    def update_state(self):
+        current_state = {}
+        if os.path.exists(self.path_to_watch):
+            for filename in os.listdir(self.path_to_watch):
+                filepath = os.path.join(self.path_to_watch, filename)
+                if os.path.isfile(filepath):
+                    metadata = self.get_metadata(filepath)
+                    if metadata:
+                        current_state[filename] = metadata
+        self.files_state = current_state
