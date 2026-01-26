@@ -5,59 +5,76 @@ import stat
 import pwd
 import grp
 
-def get_file_metadata(file_path):
-    try:
-        # get file_path 
-        file_stat = os.stat(file_path)
+class DirectoryMonitor:
+    def __init__(self, path_to_watch):
+        self.path_to_watch = path_to_watch
+        self.files_state = {}
+        self.running = True
+        print(f"[Init] Scanning directory: {self.path_to_watch}")
+        self.update_state()
 
-        filename = os.path.basename(file_path)
-        file_size = file_stat.st_size  
-
-        if stat.S_ISDIR(file_stat.st_mode):
-            file_type = "Directory"
-        elif stat.S_ISREG(file_stat.st_mode):
-            file_type = "Regular File"
-        elif stat.S_ISLNK(file_stat.st_mode):
-            file_type = "Symbolic Link"
-        else:
-            file_type = "Other"
-
-        # get owner group
+    def get_metadata(self, file_path):
         try:
-            owner = pwd.getpwuid(file_stat.st_uid).pw_name
-            group = grp.getgrgid(file_stat.st_gid).gr_name
-        except KeyError:
-            owner = str(file_stat.st_uid)
-            group = str(file_stat.st_gid)
+            stats = os.stat(file_path)
+            filename = os.path.basename(file_path)
+            try:
+                owner = pwd.getpwuid(stats.st_uid).pw_name
+                group = grp.getgrgid(stats.st_gid).gr_name
+            except KeyError:
+                owner = str(stats.st_uid)
+                group = str(stats.st_gid)
 
-        # permissions
-        permissions = oct(file_stat.st_mode)[-3:]
+            return {
+                "filename": filename,
+                "size": stats.st_size,
+                "permissions": oct(stats.st_mode)[-3:],
+                "owner": owner,
+                "mtime": stats.st_mtime,
+                "mtime_str": time.ctime(stats.st_mtime)
+            }
+        except FileNotFoundError:
+            return None
 
-        # timestamps
-        creation_time = time.ctime(file_stat.st_ctime)
-        modification_time = time.ctime(file_stat.st_mtime)
+    def update_state(self):
+        current_state = {}
+        if os.path.exists(self.path_to_watch):
+            for filename in os.listdir(self.path_to_watch):
+                filepath = os.path.join(self.path_to_watch, filename)
+                if os.path.isfile(filepath):
+                    metadata = self.get_metadata(filepath)
+                    if metadata:
+                        current_state[filename] = metadata
+        self.files_state = current_state
 
+    def check_changes(self):
+        current_files = set(os.listdir(self.path_to_watch))
+        monitored_files = set(self.files_state.keys())
+        logs = []
 
-        print(f"--- Metadata: {filename} ---")
-        print(f"Type:       {file_type}")
-        print(f"Size:       {file_size} bytes")
-        print(f"Owner/Grp:  {owner} / {group}")
-        print(f"Perms:      {permissions}")
-        print(f"Created:    {creation_time}")
-        print(f"Modified:   {modification_time}")
-        print("-" * 30)
+        # check created
+        added_files = current_files - monitored_files
+        for filename in added_files:
+            filepath = os.path.join(self.path_to_watch, filename)
+            if os.path.isfile(filepath):
+                meta = self.get_metadata(filepath)
+                if meta:
+                    logs.append(f"[CREATED] {filename} | Size: {meta['size']}B | Time: {meta['mtime_str']}")
+                    self.files_state[filename] = meta
 
-    except FileNotFoundError:
-        print(f"Error: File '{file_path}' not found.")
+        # check deleted
+        removed_files = monitored_files - current_files
+        for filename in removed_files:
+            logs.append(f"[DELETED] {filename} | Detected at: {time.ctime()}")
+            del self.files_state[filename]
 
-# self testing
-if __name__ == "__main__":
-    # create testing file
-    test_file = "test_data.txt"
-    with open(test_file, "w") as f:
-        f.write("This is a test file for Student A.")
-    
-    get_file_metadata(test_file)
-    
-    # delete file after testing
-    os.remove(test_file)
+        # check modified
+        common_files = current_files & monitored_files
+        for filename in common_files:
+            filepath = os.path.join(self.path_to_watch, filename)
+            if os.path.isfile(filepath):
+                new_meta = self.get_metadata(filepath)
+                old_meta = self.files_state.get(filename)
+                if new_meta and old_meta and new_meta['mtime'] != old_meta['mtime']:
+                    logs.append(f"[MODIFIED] {filename} | New Time: {new_meta['mtime_str']}")
+                    self.files_state[filename] = new_meta
+        return logs
