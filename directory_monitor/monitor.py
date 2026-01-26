@@ -29,6 +29,7 @@ class DirectoryMonitor:
                 "size": stats.st_size,
                 "permissions": oct(stats.st_mode)[-3:],
                 "owner": owner,
+                "group":group,
                 "mtime": stats.st_mtime,
                 "mtime_str": time.ctime(stats.st_mtime)
             }
@@ -58,7 +59,15 @@ class DirectoryMonitor:
             if os.path.isfile(filepath):
                 meta = self.get_metadata(filepath)
                 if meta:
-                    logs.append(f"[CREATED] {filename} | Size: {meta['size']}B | Time: {meta['mtime_str']}")
+                    detailed_log = (
+                        f"[CREATED] {filename}\n"
+                        f"    ├─ Type:  Regular File\n"
+                        f"    ├─ Size:  {meta['size']} bytes\n"
+                        f"    ├─ Owner: {meta['owner']} | Group: {new_meta['group']}\n"
+                        f"    ├─ Perms: {meta['permissions']}\n"
+                        f"    └─ Time:  {meta['mtime_str']}"
+                    )
+                    logs.append(detailed_log)
                     self.files_state[filename] = meta
 
         # check deleted
@@ -75,6 +84,15 @@ class DirectoryMonitor:
                 new_meta = self.get_metadata(filepath)
                 old_meta = self.files_state.get(filename)
                 if new_meta and old_meta and new_meta['mtime'] != old_meta['mtime']:
-                    logs.append(f"[MODIFIED] {filename} | New Time: {new_meta['mtime_str']}")
+                    detailed_log = (
+                        f"[MODIFIED] {filename}\n"
+                        f"    ├─ Change: {old_meta['mtime_str']} -> {new_meta['mtime_str']}\n"
+                        f"    ├─ Type:  Regular File\n"
+                        f"    ├─ Size:  {new_meta['size']} bytes\n"
+                        f"    ├─ Owner: {new_meta['owner']} | Group: {new_meta['group']}\n"
+                        f"    ├─ Perms: {new_meta['permissions']}\n"
+                        f"    └─ Time:  {new_meta['mtime_str']}"
+                    )
+                    logs.append(detailed_log)
                     self.files_state[filename] = new_meta
         return logs
