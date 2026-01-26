@@ -94,3 +94,179 @@ Top Memory Processes:
   gnome-shell (11.44%)
   mutter-x11-frames (2.56%)
   gsd-xsettings (2.10%)
+
+[2026-01-26 21:30:59]
+CPU Usage: 0.5%
+Load Avg (1,5,15): (0.5927734375, 0.255859375, 0.14013671875)
+Memory Usage: 35.7%
+Disk Usage: 49.6%
+Uptime (seconds): 2967
+Total Processes: 208, Running: 1, Sleeping: 146
+Top CPU Processes:
+  systemd (0.0%)
+  kthreadd (0.0%)
+  pool_workqueue_release (0.0%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.51%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:31:10]
+CPU Usage: 1.0%
+Load Avg (1,5,15): (0.5009765625, 0.2470703125, 0.13818359375)
+Memory Usage: 35.7%
+Disk Usage: 49.6%
+Uptime (seconds): 2978
+Total Processes: 208, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (10.4%)
+  nautilus (1.9%)
+  kworker/u9:1-kvfree_rcu_reclaim (1.8%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.52%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:31:21]
+CPU Usage: 0.5%
+Load Avg (1,5,15): (0.42333984375, 0.23828125, 0.13623046875)
+Memory Usage: 35.7%
+Disk Usage: 49.6%
+Uptime (seconds): 2989
+Total Processes: 208, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (1.2%)
+  kworker/u9:2-events_unbound (0.3%)
+  python3 (0.3%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.52%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:31:32]
+CPU Usage: 14.5%
+Load Avg (1,5,15): (0.35791015625, 0.22998046875, 0.13427734375)
+Memory Usage: 35.7%
+Disk Usage: 49.6%
+Uptime (seconds): 3000
+Total Processes: 208, Running: 2, Sleeping: 145
+Top CPU Processes:
+  gnome-shell (6.3%)
+  gnome-terminal-server (1.3%)
+  kworker/u9:1-events_unbound (0.8%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.52%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:31:43]
+CPU Usage: 1.0%
+Load Avg (1,5,15): (0.2783203125, 0.21826171875, 0.13134765625)
+Memory Usage: 35.7%
+Disk Usage: 49.6%
+Uptime (seconds): 3011
+Total Processes: 208, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (3.9%)
+  nautilus (1.4%)
+  gnome-terminal-server (0.7%)
+Top Memory Processes:
+  gnome-shell (12.16%)
+  nautilus (6.53%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:44:03]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.27392578125, 0.193359375, 0.125
+Memory Usage: 35.7% (1157246976/4069044224)
+Disk Usage: 49.6% (12339445760/26238750720)
+Uptime (seconds): 3751
+Total Processes: 206, Running: 1, Sleeping: 146
+Top CPU Processes:
+  systemd (0.0%)
+  kthreadd (0.0%)
+  pool_workqueue_release (0.0%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.56%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:44:15]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.2314453125, 0.1865234375, 0.123046875
+Memory Usage: 35.7% (1157496832/4069044224)
+Disk Usage: 49.6% (12339445760/26238750720)
+Uptime (seconds): 3763
+Total Processes: 206, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (2.1%)
+  kworker/u9:1-events_unbound (0.5%)
+  python3 (0.5%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.56%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:44:26]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.2763671875, 0.19677734375, 0.126953125
+Memory Usage: 35.7% (1157488640/4069044224)
+Disk Usage: 49.6% (12339445760/26238750720)
+Uptime (seconds): 3774
+Total Processes: 206, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (1.5%)
+  VBoxDRMClient (0.3%)
+  systemd-oomd (0.1%)
+Top Memory Processes:
+  gnome-shell (12.17%)
+  nautilus (6.56%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:44:37]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.2333984375, 0.18994140625, 0.125
+Memory Usage: 35.7% (1157480448/4069044224)
+Disk Usage: 49.6% (12339445760/26238750720)
+Uptime (seconds): 3785
+Total Processes: 206, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (1.0%)
+  gnome-terminal-server (0.3%)
+  python3 (0.2%)
+Top Memory Processes:
+  gnome-shell (12.16%)
+  nautilus (6.56%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:44:48]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.19677734375, 0.18310546875, 0.123046875
+Memory Usage: 35.7% (1157472256/4069044224)
+Disk Usage: 49.6% (12339445760/26238750720)
+Uptime (seconds): 3796
+Total Processes: 206, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (1.2%)
+  kworker/u9:2-events_unbound (0.3%)
+  VBoxDRMClient (0.2%)
+Top Memory Processes:
+  gnome-shell (12.16%)
+  nautilus (6.56%)
+  mutter-x11-frames (2.56%)
+
+[2026-01-26 21:44:59]
+CPU Usage: 1.5%
+Load Avg (1,5,15): 0.15234375, 0.17333984375, 0.1201171875
+Memory Usage: 35.7% (1157464064/4069044224)
+Disk Usage: 49.6% (12339445760/26238750720)
+Uptime (seconds): 3807
+Total Processes: 206, Running: 1, Sleeping: 146
+Top CPU Processes:
+  gnome-shell (1.2%)
+  gnome-terminal-server (0.3%)
+  kworker/u9:2-events_unbound (0.3%)
+Top Memory Processes:
+  gnome-shell (12.16%)
+  nautilus (6.56%)
+  mutter-x11-frames (2.56%)
