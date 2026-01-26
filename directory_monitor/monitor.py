@@ -76,23 +76,41 @@ class DirectoryMonitor:
             logs.append(f"[DELETED] {filename} | Detected at: {time.ctime()}")
             del self.files_state[filename]
 
-        # check modified
+        #check modified
         common_files = current_files & monitored_files
         for filename in common_files:
             filepath = os.path.join(self.path_to_watch, filename)
             if os.path.isfile(filepath):
                 new_meta = self.get_metadata(filepath)
                 old_meta = self.files_state.get(filename)
-                if new_meta and old_meta and new_meta['mtime'] != old_meta['mtime']:
-                    detailed_log = (
-                        f"[MODIFIED] {filename}\n"
-                        f"    ├─ Change: {old_meta['mtime_str']} -> {new_meta['mtime_str']}\n"
-                        f"    ├─ Type:  Regular File\n"
-                        f"    ├─ Size:  {new_meta['size']} bytes\n"
-                        f"    ├─ Owner: {new_meta['owner']} | Group: {new_meta['group']}\n"
-                        f"    ├─ Perms: {new_meta['permissions']}\n"
-                        f"    └─ Time:  {new_meta['mtime_str']}"
-                    )
-                    logs.append(detailed_log)
-                    self.files_state[filename] = new_meta
+                
+                if new_meta and old_meta:
+                    changes = []
+                    
+                    # find out what is changes
+                    if new_meta['size'] != old_meta['size']:
+                        changes.append(f"Size: {old_meta['size']} -> {new_meta['size']}")             
+                    if new_meta['permissions'] != old_meta['permissions']:
+                        changes.append(f"Perms: {old_meta['permissions']} -> {new_meta['permissions']}")
+                    if new_meta['owner'] != old_meta['owner']:
+                        changes.append(f"Owner: {old_meta['owner']} -> {new_meta['owner']}")
+                    if new_meta['group'] != old_meta['group']:
+                        changes.append(f"Group: {old_meta['group']} -> {new_meta['group']}")
+                    if new_meta['mtime'] != old_meta['mtime']:
+                        changes.append(f"Time: {old_meta['mtime_str']} -> {new_meta['mtime_str']}")
+                    if changes:
+                        change_details = "\n    ├─ [Diff] ".join(changes)    
+                        detailed_log = (
+                            f"[MODIFIED] {filename}\n"
+                            f"    ├─ [Diff] {change_details}\n"  
+                            f"    │\n"
+                            f"    └─ [Current Metadata]\n"      
+                            f"        ├─ Type:  Regular File\n"
+                            f"        ├─ Size:  {new_meta['size']} bytes\n"
+                            f"        ├─ Owner: {new_meta['owner']} | Group: {new_meta['group']}\n"
+                            f"        ├─ Perms: {new_meta['permissions']}\n"
+                            f"        └─ Time:  {new_meta['mtime_str']}"
+                        )
+                        logs.append(detailed_log)
+                        self.files_state[filename] = new_meta
         return logs
