@@ -1,0 +1,96 @@
+
+[2026-01-26 20:53:23]
+CPU Usage: 4.9%
+Load Avg (1,5,15): (0.6455078125, 0.400390625, 0.24462890625)
+Memory Usage: 30.2%
+Disk Usage: 49.6%
+Uptime (seconds): 711
+Total Processes: 207, Running: 1, Sleeping: 143
+Top CPU Processes:
+  systemd (0.0%)
+  kthreadd (0.0%)
+  pool_workqueue_release (0.0%)
+Top Memory Processes:
+  gnome-shell (11.44%)
+  mutter-x11-frames (2.56%)
+  gsd-xsettings (2.10%)
+
+[2026-01-26 20:53:34]
+CPU Usage: 0.0%
+Load Avg (1,5,15): (0.5458984375, 0.38671875, 0.24169921875)
+Memory Usage: 30.2%
+Disk Usage: 49.6%
+Uptime (seconds): 722
+Total Processes: 207, Running: 1, Sleeping: 143
+Top CPU Processes:
+  gnome-shell (3.5%)
+  kworker/u10:2-events_freezable_pwr_efficient (0.5%)
+  snapd (0.5%)
+Top Memory Processes:
+  gnome-shell (11.44%)
+  mutter-x11-frames (2.56%)
+  gsd-xsettings (2.10%)
+
+[2026-01-26 20:53:45]
+CPU Usage: 1.5%
+Load Avg (1,5,15): (0.7822265625, 0.4404296875, 0.2607421875)
+Memory Usage: 30.2%
+Disk Usage: 49.6%
+Uptime (seconds): 733
+Total Processes: 208, Running: 1, Sleeping: 143
+Top CPU Processes:
+  gnome-shell (3.3%)
+  kworker/u10:2-ext4-rsv-conversion (0.6%)
+  kworker/1:0H-kblockd (0.5%)
+Top Memory Processes:
+  gnome-shell (11.44%)
+  mutter-x11-frames (2.56%)
+  gsd-xsettings (2.10%)
+
+[2026-01-26 20:53:56]
+CPU Usage: 2.0%
+Load Avg (1,5,15): (0.66162109375, 0.42578125, 0.2578125)
+Memory Usage: 30.2%
+Disk Usage: 49.6%
+Uptime (seconds): 744
+Total Processes: 208, Running: 1, Sleeping: 143
+Top CPU Processes:
+  gnome-shell (2.5%)
+  kworker/u10:2-events_unbound (0.9%)
+  python3 (0.5%)
+Top Memory Processes:
+  gnome-shell (11.44%)
+  mutter-x11-frames (2.56%)
+  gsd-xsettings (2.10%)
+
+[2026-01-26 20:54:07]
+CPU Usage: 0.5%
+Load Avg (1,5,15): (0.5595703125, 0.4111328125, 0.2548828125)
+Memory Usage: 30.2%
+Disk Usage: 49.6%
+Uptime (seconds): 755
+Total Processes: 208, Running: 1, Sleeping: 143
+Top CPU Processes:
+  gnome-shell (1.4%)
+  python3 (0.5%)
+  kworker/1:1-events (0.2%)
+Top Memory Processes:
+  gnome-shell (11.44%)
+  mutter-x11-frames (2.56%)
+  gsd-xsettings (2.10%)
+
+[2026-01-26 20:54:19]
+CPU Usage: 2.0%
+Load Avg (1,5,15): (0.50341796875, 0.40673828125, 0.25634765625)
+Memory Usage: 30.2%
+Disk Usage: 49.6%
+Uptime (seconds): 767
+Total Processes: 208, Running: 1, Sleeping: 143
+Top CPU Processes:
+  gnome-shell (3.4%)
+  kworker/u10:6-events_unbound (0.7%)
+  python3 (0.5%)
+Top Memory Processes:
+  gnome-shell (11.44%)
+  mutter-x11-frames (2.56%)
+  gsd-xsettings (2.10%)
