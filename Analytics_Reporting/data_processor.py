@@ -13,7 +13,7 @@ if not os.path.exists(OUTPUT_DIR):
 def generate_visual_report():
     try:
         # Step 1: Data Processing
-        df = pd.read_csv(LOG_FILE)
+        df = pd.read_csv(LOG_FILE, on_bad_lines='skip')
 
         # Calculate key statistics
         avg_cpu = df['cpu_usage'].mean()
