@@ -2,22 +2,21 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# The correct path from the main folder
+# Paths relative to the root folder (AAC6164-Group3)
 LOG_FILE = "logs/system_metrics.csv"
 OUTPUT_DIR = "Analytics_Reporting/output_reports"
 
-# Create output folder if it doesn't exist
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
 def generate_visual_report():
     try:
-        # Step 1: Data Processing
+        # Step 1: Data Processing - skipping malformed lines
         df = pd.read_csv(LOG_FILE, on_bad_lines='skip')
 
-        # Calculate key statistics
+        # Matching the exact column names from your 'head' command
         avg_cpu = df['cpu_usage'].mean()
-        avg_mem = df['mem_usage'].mean()
+        avg_mem = df['mem_percent'].mean()
         max_cpu = df['cpu_usage'].max()
 
         # Step 2: Generate Summary Text Report
@@ -27,24 +26,28 @@ def generate_visual_report():
             f.write(f"Average CPU Usage: {avg_cpu:.2f}%\n")
             f.write(f"Average Memory Usage: {avg_mem:.2f}%\n")
             f.write(f"Peak CPU Recorded: {max_cpu:.2f}%\n")
-        
-        # Step 3: Visualizations (Requirement for 3 members)
-        # Plot 1: CPU Usage
+
+        # Step 3: Visualizations
+        # CPU Usage Plot
         plt.figure(figsize=(8, 4))
         plt.plot(df.index, df['cpu_usage'], label='CPU %', color='red')
         plt.title('CPU Usage Over Time')
+        plt.xlabel('Record Index')
+        plt.ylabel('Usage (%)')
         plt.savefig(f"{OUTPUT_DIR}/cpu_plot.png")
 
-        # Plot 2: Memory Usage
+        # Memory Usage Plot (using mem_percent)
         plt.figure(figsize=(8, 4))
-        plt.plot(df.index, df['mem_usage'], label='Mem %', color='blue')
+        plt.plot(df.index, df['mem_percent'], label='Mem %', color='blue')
         plt.title('Memory Usage Over Time')
+        plt.xlabel('Record Index')
+        plt.ylabel('Usage (%)')
         plt.savefig(f"{OUTPUT_DIR}/mem_plot.png")
 
-        print(f"Success! Reports saved in {OUTPUT_DIR}")
+        print(f"Success! Reports and plots generated in {OUTPUT_DIR}")
 
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error during processing: {e}")
 
 if __name__ == "__main__":
     generate_visual_report()
