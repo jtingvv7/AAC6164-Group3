@@ -63,7 +63,7 @@ class DirectoryMonitor:
                         f"[CREATED] {filename}\n"
                         f"    ├─ Type:  Regular File\n"
                         f"    ├─ Size:  {meta['size']} bytes\n"
-                        f"    ├─ Owner: {meta['owner']} | Group: {new_meta['group']}\n"
+                        f"    ├─ Owner: {meta['owner']} | Group: {meta['group']}\n"
                         f"    ├─ Perms: {meta['permissions']}\n"
                         f"    └─ Time:  {meta['mtime_str']}"
                     )
