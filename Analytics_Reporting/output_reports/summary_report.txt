@@ -1,4 +1,0 @@
---- SYSTEM PERFORMANCE SUMMARY ---
-Average CPU Usage: 0.75%
-Average Memory Usage: 35.70%
-Peak CPU Recorded: 1.50%

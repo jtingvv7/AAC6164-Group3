@@ -52,3 +52,111 @@
 [2026-01-29 19:34:44]
 [DELETED] test7.txt | Detected at: Thu Jan 29 19:34:44 2026
 ------------------------------
+[2026-01-29 21:23:00]
+[CREATED] test8.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 21:22:58 2026
+------------------------------
+[2026-01-29 21:23:01]
+[CREATED] test8.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 21:22:58 2026
+------------------------------
+[2026-01-29 21:23:34]
+[DELETED] test1.txt | Detected at: Thu Jan 29 21:23:34 2026
+------------------------------
+[2026-01-29 21:23:37]
+[DELETED] test1.txt | Detected at: Thu Jan 29 21:23:37 2026
+------------------------------
+[2026-01-29 21:23:46]
+[DELETED] test2.txt | Detected at: Thu Jan 29 21:23:46 2026
+------------------------------
+[2026-01-29 21:23:46]
+[DELETED] test2.txt | Detected at: Thu Jan 29 21:23:46 2026
+------------------------------
+[2026-01-29 21:39:49]
+[DELETED] secret.txt | Detected at: Thu Jan 29 21:39:49 2026
+------------------------------
+[2026-01-29 21:39:49]
+[DELETED] newtest.txt | Detected at: Thu Jan 29 21:39:49 2026
+------------------------------
+[2026-01-29 21:39:52]
+[DELETED] test3.txt | Detected at: Thu Jan 29 21:39:52 2026
+------------------------------
+[2026-01-29 21:39:55]
+[DELETED] test4.txt | Detected at: Thu Jan 29 21:39:55 2026
+------------------------------
+[2026-01-29 21:39:58]
+[DELETED] test6.txt | Detected at: Thu Jan 29 21:39:58 2026
+------------------------------
+[2026-01-29 21:40:01]
+[DELETED] test8.txt | Detected at: Thu Jan 29 21:40:01 2026
+------------------------------
+[2026-01-29 21:41:01]
+[CREATED] test1.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 21:40:59 2026
+------------------------------
+[2026-01-29 21:41:01]
+[CREATED] test1.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 21:40:59 2026
+------------------------------
+[2026-01-29 21:41:07]
+[CREATED] testt2.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 21:41:07 2026
+------------------------------
+[2026-01-29 21:41:10]
+[CREATED] testt2.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 21:41:07 2026
+------------------------------
+[2026-01-29 21:41:25]
+[MODIFIED] test1.txt
+    ├─ [Diff] Size: 0 -> 5
+    ├─ [Diff] Time: Thu Jan 29 21:40:59 2026 -> Thu Jan 29 21:41:24 2026
+    │
+    └─ [Current Metadata]
+        ├─ Type:  Regular File
+        ├─ Size:  5 bytes
+        ├─ Owner: joan | Group: joan
+        ├─ Perms: 644
+        └─ Time:  Thu Jan 29 21:41:24 2026
+------------------------------
+[2026-01-29 21:41:25]
+[MODIFIED] test1.txt
+    ├─ [Diff] Size: 0 -> 5
+    ├─ [Diff] Time: Thu Jan 29 21:40:59 2026 -> Thu Jan 29 21:41:24 2026
+    │
+    └─ [Current Metadata]
+        ├─ Type:  Regular File
+        ├─ Size:  5 bytes
+        ├─ Owner: joan | Group: joan
+        ├─ Perms: 644
+        └─ Time:  Thu Jan 29 21:41:24 2026
+------------------------------
+[2026-01-29 21:41:37]
+[DELETED] testt2.txt | Detected at: Thu Jan 29 21:41:37 2026
+------------------------------
+[2026-01-29 21:41:37]
+[DELETED] testt2.txt | Detected at: Thu Jan 29 21:41:37 2026
+------------------------------

@@ -17,20 +17,41 @@ def generate_visual_report():
         try:
             df = pd.read_csv(SYS_LOG, on_bad_lines='skip')
             
-            plt.figure(figsize=(10, 5))
-            if 'timestamp' in df.columns:
-                plt.plot(df['timestamp'], df['cpu_usage'], color='red', marker='o')
-                plt.xticks(rotation=45) 
-            else:
-                plt.plot(df.index, df['cpu_usage'], color='red')
+            # CPU Usage
+            if 'cpu_usage' in df.columns:
+                plt.figure(figsize=(10, 5))
+                x_axis = df['timestamp'] if 'timestamp' in df.columns else df.index
                 
-            plt.title('System CPU Usage Trend')
-            plt.xlabel('Time')
-            plt.ylabel('CPU Usage (%)')
-            plt.tight_layout()
-            plt.savefig(f"{OUTPUT_DIR}/cpu_report.png")
-            print(f"-> Saved: {OUTPUT_DIR}/cpu_report.png")
-            plt.close()
+                plt.plot(x_axis, df['cpu_usage'], color='red', marker='o', label='CPU %')
+                plt.title('System CPU Usage Trend')
+                plt.xlabel('Time')
+                plt.ylabel('Usage (%)')
+                plt.xticks(rotation=45) 
+                plt.grid(True)
+                plt.tight_layout()
+                plt.savefig(f"{OUTPUT_DIR}/cpu_report.png")
+                print(f"-> Saved: {OUTPUT_DIR}/cpu_report.png")
+                plt.close()
+
+            # Memory Usage
+            if 'mem_percent' in df.columns:
+                plt.figure(figsize=(10, 5))
+                x_axis = df['timestamp'] if 'timestamp' in df.columns else df.index
+
+                plt.plot(x_axis, df['mem_percent'], color='blue', marker='x', label='Memory %')
+                plt.title('System Memory Usage Trend')
+                plt.xlabel('Time')
+                plt.ylabel('Memory Usage (%)')
+                plt.ylim(0, 100) 
+                plt.xticks(rotation=45)
+                plt.grid(True)
+                plt.tight_layout()
+                plt.savefig(f"{OUTPUT_DIR}/memory_report.png")
+                print(f"-> Saved: {OUTPUT_DIR}/memory_report.png")
+                plt.close()
+            else:
+                print("Column 'mem_percent' not found in CSV.")
+
             
         except Exception as e:
             print(f"Error processing System Logs: {e}")
