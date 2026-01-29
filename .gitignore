@@ -1,1 +1,6 @@
 venv/
+logs/
+*.csv
+*.txt
+__pycache__/
+*.pyc
