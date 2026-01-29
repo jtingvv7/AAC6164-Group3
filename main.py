@@ -6,10 +6,10 @@ from directory_monitor.monitor import DirectoryMonitor
 from system_monitor import start_system_monitor
 
 try:
-    from nothing import generate_visual_report
+    from Analytics_Reporting.data_processor import generate_visual_report
     print("Graphing module loaded successfully")
 except ImportError:
-    print("Warning: Graphs will not be generated")
+    print("Warning: Error.Graphs will not be generated")
     def generate_visual_report():pass
 
 def main():
