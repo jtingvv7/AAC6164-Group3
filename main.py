@@ -1,6 +1,7 @@
 import time
 import os
 import threading
+import datetime
 from directory_monitor.monitor import DirectoryMonitor
 from system_monitor import start_system_monitor
 
@@ -13,6 +14,12 @@ def main():
         os.makedirs(watch_dir)
         print("Created testing directory")
 
+    log_dir = "./logs"
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    
+    dir_log_file = os.path.join(log_dir,"directory_monitor.txt")
+
     monitor = DirectoryMonitor(watch_dir)
 
     # Start system monitor in background
@@ -24,8 +31,11 @@ def main():
             logs = monitor.check_changes()
             if logs:
                 print("\nChanges Detected")
-                for log in logs:
-                    print(log)
+                with open(dir_log_file,"a") as f:
+                    for log in logs:
+                        print(log)
+                        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        f.write(f"[{timestamp}]\n{log}\n" + "-"*30 + "\n")
             time.sleep(3)
 
     except KeyboardInterrupt:

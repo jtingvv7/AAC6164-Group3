@@ -1,0 +1,8 @@
+[2026-01-29 18:59:09]
+[CREATED] test6.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 18:59:07 2026
+------------------------------
