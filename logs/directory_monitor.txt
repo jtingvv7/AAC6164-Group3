@@ -6,3 +6,49 @@
     ├─ Perms: 644
     └─ Time:  Thu Jan 29 18:59:07 2026
 ------------------------------
+[2026-01-29 19:33:41]
+[CREATED] test7.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 19:33:41 2026
+------------------------------
+[2026-01-29 19:33:44]
+[CREATED] test7.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Thu Jan 29 19:33:41 2026
+------------------------------
+[2026-01-29 19:34:23]
+[MODIFIED] test7.txt
+    ├─ [Diff] Size: 0 -> 8
+    ├─ [Diff] Time: Thu Jan 29 19:33:41 2026 -> Thu Jan 29 19:34:21 2026
+    │
+    └─ [Current Metadata]
+        ├─ Type:  Regular File
+        ├─ Size:  8 bytes
+        ├─ Owner: joan | Group: joan
+        ├─ Perms: 644
+        └─ Time:  Thu Jan 29 19:34:21 2026
+------------------------------
+[2026-01-29 19:34:23]
+[MODIFIED] test7.txt
+    ├─ [Diff] Size: 0 -> 8
+    ├─ [Diff] Time: Thu Jan 29 19:33:41 2026 -> Thu Jan 29 19:34:21 2026
+    │
+    └─ [Current Metadata]
+        ├─ Type:  Regular File
+        ├─ Size:  8 bytes
+        ├─ Owner: joan | Group: joan
+        ├─ Perms: 644
+        └─ Time:  Thu Jan 29 19:34:21 2026
+------------------------------
+[2026-01-29 19:34:44]
+[DELETED] test7.txt | Detected at: Thu Jan 29 19:34:44 2026
+------------------------------
+[2026-01-29 19:34:44]
+[DELETED] test7.txt | Detected at: Thu Jan 29 19:34:44 2026
+------------------------------
