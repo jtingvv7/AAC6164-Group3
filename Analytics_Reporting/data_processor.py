@@ -2,52 +2,73 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# Paths relative to the root folder (AAC6164-Group3)
-LOG_FILE = "logs/system_metrics.csv"
-OUTPUT_DIR = "Analytics_Reporting/output_reports"
+SYS_LOG = "logs/system_metrics.csv"        # cy
+DIR_LOG = "logs/directory_monitor.txt"     # joan
 
+OUTPUT_DIR = "logs"  
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
 def generate_visual_report():
-    try:
-        # Step 1: Data Processing - skipping malformed lines
-        df = pd.read_csv(LOG_FILE, on_bad_lines='skip')
+    print("--- Starting Report Generation ---")
 
-        # Matching the exact column names from your 'head' command
-        avg_cpu = df['cpu_usage'].mean()
-        avg_mem = df['mem_percent'].mean()
-        max_cpu = df['cpu_usage'].max()
+    # system monitor part
+    if os.path.exists(SYS_LOG):
+        try:
+            df = pd.read_csv(SYS_LOG, on_bad_lines='skip')
+            
+            plt.figure(figsize=(10, 5))
+            if 'timestamp' in df.columns:
+                plt.plot(df['timestamp'], df['cpu_usage'], color='red', marker='o')
+                plt.xticks(rotation=45) 
+            else:
+                plt.plot(df.index, df['cpu_usage'], color='red')
+                
+            plt.title('System CPU Usage Trend')
+            plt.xlabel('Time')
+            plt.ylabel('CPU Usage (%)')
+            plt.tight_layout()
+            plt.savefig(f"{OUTPUT_DIR}/cpu_report.png")
+            print(f"-> Saved: {OUTPUT_DIR}/cpu_report.png")
+            plt.close()
+            
+        except Exception as e:
+            print(f"Error processing System Logs: {e}")
+    else:
+        print("Warning: system_metrics.csv not found.")
 
-        # Step 2: Generate Summary Text Report
-        report_path = f"{OUTPUT_DIR}/summary_report.txt"
-        with open(report_path, "w") as f:
-            f.write("--- SYSTEM PERFORMANCE SUMMARY ---\n")
-            f.write(f"Average CPU Usage: {avg_cpu:.2f}%\n")
-            f.write(f"Average Memory Usage: {avg_mem:.2f}%\n")
-            f.write(f"Peak CPU Recorded: {max_cpu:.2f}%\n")
-
-        # Step 3: Visualizations
-        # CPU Usage Plot
-        plt.figure(figsize=(8, 4))
-        plt.plot(df.index, df['cpu_usage'], label='CPU %', color='red')
-        plt.title('CPU Usage Over Time')
-        plt.xlabel('Record Index')
-        plt.ylabel('Usage (%)')
-        plt.savefig(f"{OUTPUT_DIR}/cpu_plot.png")
-
-        # Memory Usage Plot (using mem_percent)
-        plt.figure(figsize=(8, 4))
-        plt.plot(df.index, df['mem_percent'], label='Mem %', color='blue')
-        plt.title('Memory Usage Over Time')
-        plt.xlabel('Record Index')
-        plt.ylabel('Usage (%)')
-        plt.savefig(f"{OUTPUT_DIR}/mem_plot.png")
-
-        print(f"Success! Reports and plots generated in {OUTPUT_DIR}")
-
-    except Exception as e:
-        print(f"Error during processing: {e}")
+    # directory monitor part
+    if os.path.exists(DIR_LOG):
+        try:
+            stats = {"CREATED": 0, "MODIFIED": 0, "DELETED": 0}
+            
+            with open(DIR_LOG, "r") as f:
+                for line in f:
+                    if "[CREATED]" in line:
+                        stats["CREATED"] += 1
+                    elif "[MODIFIED]" in line:
+                        stats["MODIFIED"] += 1
+                    elif "[DELETED]" in line:
+                        stats["DELETED"] += 1
+            
+            if sum(stats.values()) > 0:
+                labels = [k for k, v in stats.items() if v > 0]
+                sizes = [v for v in stats.values() if v > 0]
+                colors = ['#4CAF50', '#FFC107', '#F44336'] 
+                
+                plt.figure(figsize=(6, 6))
+                plt.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colors, startangle=140)
+                plt.title('File System Activity Distribution')
+                plt.savefig(f"{OUTPUT_DIR}/file_activity_report.png")
+                print(f"-> Saved: {OUTPUT_DIR}/file_activity_report.png")
+                plt.close()
+            else:
+                print("No file activities recorded yet.")
+                
+        except Exception as e:
+            print(f"Error processing Directory Logs: {e}")
+    else:
+        print("Warning: directory_monitor.txt not found.")
 
 if __name__ == "__main__":
     generate_visual_report()
