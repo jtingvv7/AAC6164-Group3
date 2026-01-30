@@ -1,10 +1,11 @@
+
 import psutil
 import time
 from datetime import datetime
 import csv
 import os
 
-# Ensure logs folder exists
+# Ensure logs folder exists 
 if not os.path.exists("logs"):
     os.makedirs("logs")
 
@@ -26,6 +27,7 @@ if not os.path.isfile(CSV_FILE):
 
 def get_top_processes(key, limit=3):
     processes = []
+    # Identify top processes by CPU or Memory 
     for p in psutil.process_iter(['name', 'cpu_percent', 'memory_percent']):
         try:
             processes.append(p.info)
@@ -40,36 +42,48 @@ def top_list(lst, key):
             result.extend([lst[i]['name'], lst[i][key]])
         else:
             result.extend(["", ""])
-    return result
+    return result 
 
 def start_system_monitor():
+    print("Monitoring started. Press Ctrl+C to stop.")
     while True:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+        # CPU Metrics 
         cpu_usage = psutil.cpu_percent(interval=1)
         load1, load5, load15 = psutil.getloadavg()
 
+        # Memory Metrics 
         mem = psutil.virtual_memory()
+        
+        # Disk Metrics 
         disk = psutil.disk_usage('/')
 
+        # Uptime and Idle Time via /proc/uptime 
         with open("/proc/uptime") as f:
             uptime_seconds, idle_seconds = map(float, f.readline().split())
 
+        # Process Metrics
         processes = list(psutil.process_iter(['status']))
         total_proc = len(processes)
         running = len([p for p in processes if p.info['status'] == psutil.STATUS_RUNNING])
         sleeping = len([p for p in processes if p.info['status'] == psutil.STATUS_SLEEPING])
 
+        # Top 3 Processes 
         top_cpu = get_top_processes('cpu_percent')
         top_mem = get_top_processes('memory_percent')
 
+        # Writing to TXT Log for Reporting
         with open(TXT_FILE, "a") as f:
             f.write(f"\n[{now}]\n")
             f.write(f"CPU Usage: {cpu_usage}%\n")
             f.write(f"Load Avg (1,5,15): {load1}, {load5}, {load15}\n")
-            f.write(f"Memory Usage: {mem.percent}%\n")
-            f.write(f"Disk Usage: {disk.percent}%\n")
+            f.write(f"Memory: Total: {mem.total}, Used: {mem.used}, Available: {mem.available} ({mem.percent}%)\n")
+            f.write(f"Disk: Total: {disk.total}, Used: {disk.used}, Free: {disk.free} ({disk.percent}%)\n")
+            f.write(f"Uptime: {int(uptime_seconds)}s, Idle Time: {int(idle_seconds)}s\n")
+            f.write(f"Total Processes: {total_proc}, Running: {running}, Sleeping: {sleeping}\n")
 
+        # Preparing data for CSV [cite: 68]
         row = [
             now, cpu_usage, load1, load5, load15,
             mem.total, mem.used, mem.available, mem.percent,
