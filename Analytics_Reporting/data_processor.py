@@ -16,7 +16,7 @@ def generate_visual_report():
     if os.path.exists(SYS_LOG):
         try:
             df = pd.read_csv(SYS_LOG, on_bad_lines='skip')
-            
+            df = df.tail(30)
             # CPU Usage
             if 'cpu_usage' in df.columns:
                 plt.figure(figsize=(10, 5))

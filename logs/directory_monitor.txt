@@ -160,3 +160,25 @@
 [2026-01-29 21:41:37]
 [DELETED] testt2.txt | Detected at: Thu Jan 29 21:41:37 2026
 ------------------------------
+[2026-01-30 19:43:01]
+[CREATED] test2.txt
+    ├─ Type:  Regular File
+    ├─ Size:  0 bytes
+    ├─ Owner: joan | Group: joan
+    ├─ Perms: 644
+    └─ Time:  Fri Jan 30 19:43:01 2026
+------------------------------
+[2026-01-30 19:43:34]
+[MODIFIED] test2.txt
+    ├─ [Diff] Perms: 644 -> 777
+    │
+    └─ [Current Metadata]
+        ├─ Type:  Regular File
+        ├─ Size:  0 bytes
+        ├─ Owner: joan | Group: joan
+        ├─ Perms: 777
+        └─ Time:  Fri Jan 30 19:43:01 2026
+------------------------------
+[2026-01-30 19:43:45]
+[DELETED] test2.txt | Detected at: Fri Jan 30 19:43:45 2026
+------------------------------
