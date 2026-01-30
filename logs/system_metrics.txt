@@ -59,13 +59,11 @@ Load Avg (1,5,15): 0.11376953125, 0.0927734375, 0.087890625
 Memory Usage: 11.8%
 Disk Usage: 0.3%
 
-<<<<<<< Updated upstream
 [2026-01-30 20:43:48]
 CPU Usage: 0.4%
 Load Avg (1,5,15): 0.087890625, 0.0869140625, 0.08642578125
 Memory Usage: 12.0%
 Disk Usage: 0.3%
-=======
 [2026-01-26 21:31:43]
 CPU Usage: 1.0%
 Load Avg (1,5,15): (0.2783203125, 0.21826171875, 0.13134765625)
@@ -317,4 +315,341 @@ CPU Usage: 0.0%
 Load Avg (1,5,15): 0.0576171875, 0.14453125, 0.07373046875
 Memory Usage: 28.7%
 Disk Usage: 51.8%
->>>>>>> Stashed changes
+
+[2026-01-31 03:01:45]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.02978515625, 0.08984375, 0.0859375
+Memory: Total: 4069044224, Used: 904531968, Available: 2892546048 (28.9%)
+Disk: Total: 26238750720, Used: 12901343232, Free: 11978612736 (51.9%)
+Uptime: 2149s, Idle Time: 4134s
+Total Processes: 205, Running: 0, Sleeping: 147
+
+[2026-01-31 03:01:56]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0224609375, 0.0849609375, 0.08447265625
+Memory: Total: 4069044224, Used: 904740864, Available: 2892320768 (28.9%)
+Disk: Total: 26238750720, Used: 12901343232, Free: 11978612736 (51.9%)
+Uptime: 2161s, Idle Time: 4156s
+Total Processes: 205, Running: 0, Sleeping: 147
+
+[2026-01-31 03:02:07]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0185546875, 0.08203125, 0.08349609375
+Memory: Total: 4069044224, Used: 904990720, Available: 2892062720 (28.9%)
+Disk: Total: 26238750720, Used: 12901343232, Free: 11978612736 (51.9%)
+Uptime: 2172s, Idle Time: 4177s
+Total Processes: 205, Running: 0, Sleeping: 147
+
+[2026-01-31 03:02:18]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.01513671875, 0.0791015625, 0.08251953125
+Memory: Total: 4069044224, Used: 904982528, Available: 2892062720 (28.9%)
+Disk: Total: 26238750720, Used: 12901343232, Free: 11978612736 (51.9%)
+Uptime: 2183s, Idle Time: 4199s
+Total Processes: 205, Running: 0, Sleeping: 147
+
+[2026-01-31 03:02:29]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.01220703125, 0.076171875, 0.08154296875
+Memory: Total: 4069044224, Used: 904974336, Available: 2892087296 (28.9%)
+Disk: Total: 26238750720, Used: 12901343232, Free: 11978612736 (51.9%)
+Uptime: 2194s, Idle Time: 4221s
+Total Processes: 205, Running: 0, Sleeping: 147
+
+[2026-01-31 03:02:40]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.009765625, 0.0732421875, 0.08056640625
+Memory: Total: 4069044224, Used: 904966144, Available: 2892095488 (28.9%)
+Disk: Total: 26238750720, Used: 12901343232, Free: 11978612736 (51.9%)
+Uptime: 2205s, Idle Time: 4243s
+Total Processes: 205, Running: 0, Sleeping: 147
+
+[2026-01-31 03:35:04]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.08349609375, 0.078125, 0.06689453125
+Memory: Total: 4069044224, Used: 927686656, Available: 2869309440 (29.5%)
+Disk: Total: 26238750720, Used: 12901421056, Free: 11978534912 (51.9%)
+Uptime: 4149s, Idle Time: 8047s
+Total Processes: 205, Running: 0, Sleeping: 147
+Top CPU: [('systemd', 0.0), ('kthreadd', 0.0), ('pool_workqueue_release', 0.0)]
+Top Mem: [('gnome-shell', 11.055858605482682), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:35:15]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0703125, 0.0751953125, 0.06591796875
+Memory: Total: 4069044224, Used: 927678464, Available: 2869309440 (29.5%)
+Disk: Total: 26238750720, Used: 12901421056, Free: 11978534912 (51.9%)
+Uptime: 4160s, Idle Time: 8069s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.8), ('kworker/u10:3-events_unbound', 0.3), ('gnome-terminal-server', 0.2)]
+Top Mem: [('gnome-shell', 11.055657280563388), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:35:26]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.05419921875, 0.07080078125, 0.064453125
+Memory: Total: 4069044224, Used: 927670272, Available: 2869325824 (29.5%)
+Disk: Total: 26238750720, Used: 12901421056, Free: 11978534912 (51.9%)
+Uptime: 4171s, Idle Time: 8090s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.6), ('VBoxDRMClient', 0.2), ('kworker/u10:3-events_unbound', 0.2)]
+Top Mem: [('gnome-shell', 11.055657280563388), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:35:38]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.04541015625, 0.06787109375, 0.0634765625
+Memory: Total: 4069044224, Used: 927662080, Available: 2869325824 (29.5%)
+Disk: Total: 26238750720, Used: 12901421056, Free: 11978534912 (51.9%)
+Uptime: 4182s, Idle Time: 8112s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 1.0), ('kworker/u10:3-events_unbound', 0.3), ('systemd-oomd', 0.2)]
+Top Mem: [('gnome-shell', 11.055657280563388), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:38:14]
+CPU Usage: 1.5%
+Load Avg (1,5,15): 0.00048828125, 0.0341796875, 0.04833984375
+Memory: Total: 4069044224, Used: 951353344, Available: 2845638656 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4338s, Idle Time: 8413s
+Total Processes: 201, Running: 0, Sleeping: 147
+Top CPU: [('systemd', 0.0), ('kthreadd', 0.0), ('pool_workqueue_release', 0.0)]
+Top Mem: [('gnome-shell', 11.448945510403968), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:38:25]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0, 0.0322265625, 0.04736328125
+Memory: Total: 4069044224, Used: 951345152, Available: 2845646848 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4349s, Idle Time: 8435s
+Total Processes: 201, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.8), ('gnome-terminal-server', 0.2), ('kworker/u10:1-events_freezable_pwr_efficient', 0.2)]
+Top Mem: [('gnome-shell', 11.448945510403968), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:38:36]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.0302734375, 0.04638671875
+Memory: Total: 4069044224, Used: 951332864, Available: 2845646848 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4360s, Idle Time: 8457s
+Total Processes: 201, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.7), ('python3', 0.3), ('VBoxDRMClient', 0.2)]
+Top Mem: [('gnome-shell', 11.448945510403968), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:38:47]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.0, 0.0283203125, 0.044921875
+Memory: Total: 4069044224, Used: 951316480, Available: 2845655040 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4372s, Idle Time: 8479s
+Total Processes: 201, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 1.1), ('gnome-terminal-server', 0.3), ('kworker/u10:1-events_unbound', 0.2)]
+Top Mem: [('gnome-shell', 11.448945510403968), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:38:58]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.02734375, 0.0439453125
+Memory: Total: 4069044224, Used: 951308288, Available: 2845655040 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4383s, Idle Time: 8501s
+Total Processes: 202, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.6), ('python3', 0.2), ('kworker/0:0-events', 0.1)]
+Top Mem: [('gnome-shell', 11.448945510403968), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:39:09]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0, 0.0263671875, 0.04296875
+Memory: Total: 4069044224, Used: 951300096, Available: 2845655040 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4394s, Idle Time: 8522s
+Total Processes: 202, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.5), ('python3', 0.2), ('ksoftirqd/1', 0.1)]
+Top Mem: [('gnome-shell', 11.448844847944322), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:39:20]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.025390625, 0.0419921875
+Memory: Total: 4069044224, Used: 951291904, Available: 2845655040 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4405s, Idle Time: 8544s
+Total Processes: 202, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 1.2), ('VBoxDRMClient', 0.2), ('gnome-terminal-server', 0.2)]
+Top Mem: [('gnome-shell', 11.448844847944322), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:39:31]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0, 0.02392578125, 0.04052734375
+Memory: Total: 4069044224, Used: 951283712, Available: 2845696000 (30.1%)
+Disk: Total: 26238750720, Used: 12901425152, Free: 11978530816 (51.9%)
+Uptime: 4416s, Idle Time: 8566s
+Total Processes: 202, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.7), ('python3', 0.2), ('kworker/u10:0-events_unbound', 0.2)]
+Top Mem: [('gnome-shell', 11.448844847944322), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:39:42]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0, 0.02294921875, 0.03955078125
+Memory: Total: 4069044224, Used: 951271424, Available: 2845696000 (30.1%)
+Disk: Total: 26238750720, Used: 12901429248, Free: 11978526720 (51.9%)
+Uptime: 4427s, Idle Time: 8588s
+Total Processes: 202, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('kworker/0:0-events', 0.1), ('kworker/1:2-events', 0.1)]
+Top Mem: [('gnome-shell', 11.448844847944322), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:39:53]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.02197265625, 0.03857421875
+Memory: Total: 4069044224, Used: 951259136, Available: 2845696000 (30.1%)
+Disk: Total: 26238750720, Used: 12901433344, Free: 11978522624 (51.9%)
+Uptime: 4438s, Idle Time: 8609s
+Total Processes: 202, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.8), ('kworker/u10:0-events_unbound', 0.3), ('VBoxDRMClient', 0.2)]
+Top Mem: [('gnome-shell', 11.448844847944322), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:40:04]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.02099609375, 0.03759765625
+Memory: Total: 4069044224, Used: 951496704, Available: 2845491200 (30.1%)
+Disk: Total: 26238750720, Used: 12901437440, Free: 11978518528 (51.9%)
+Uptime: 4449s, Idle Time: 8631s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.4), ('python3', 0.2), ('kworker/0:0-events', 0.1)]
+Top Mem: [('gnome-shell', 11.448844847944322), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:40:15]
+CPU Usage: 1.0%
+Load Avg (1,5,15): 0.0, 0.02001953125, 0.03662109375
+Memory: Total: 4069044224, Used: 951476224, Available: 2845499392 (30.1%)
+Disk: Total: 26238750720, Used: 12901437440, Free: 11978518528 (51.9%)
+Uptime: 4460s, Idle Time: 8653s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 1.2), ('kworker/u10:0-events_unbound', 0.3), ('VBoxDRMClient', 0.2)]
+Top Mem: [('gnome-shell', 11.447435573509264), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:40:26]
+CPU Usage: 8.4%
+Load Avg (1,5,15): 0.0, 0.0185546875, 0.03515625
+Memory: Total: 4069044224, Used: 951468032, Available: 2845503488 (30.1%)
+Disk: Total: 26238750720, Used: 12901437440, Free: 11978518528 (51.9%)
+Uptime: 4471s, Idle Time: 8674s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 5.1), ('gnome-terminal-server', 1.3), ('kworker/u10:1-events_unbound', 0.6)]
+Top Mem: [('gnome-shell', 11.447838223347851), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:40:37]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.017578125, 0.0341796875
+Memory: Total: 4069044224, Used: 951459840, Available: 2845528064 (30.1%)
+Disk: Total: 26238750720, Used: 12901437440, Free: 11978518528 (51.9%)
+Uptime: 4482s, Idle Time: 8695s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 6.1), ('gnome-terminal-server', 1.6), ('kworker/u10:2-kvfree_rcu_reclaim', 0.6)]
+Top Mem: [('gnome-shell', 11.447838223347851), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:40:48]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.0166015625, 0.033203125
+Memory: Total: 4069044224, Used: 951451648, Available: 2845528064 (30.1%)
+Disk: Total: 26238750720, Used: 12901437440, Free: 11978518528 (51.9%)
+Uptime: 4493s, Idle Time: 8717s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('VBoxDRMClient', 0.2), ('gnome-shell', 0.2), ('python3', 0.2)]
+Top Mem: [('gnome-shell', 11.447838223347851), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:40:59]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0, 0.015625, 0.0322265625
+Memory: Total: 4069044224, Used: 951443456, Available: 2845528064 (30.1%)
+Disk: Total: 26238750720, Used: 12901437440, Free: 11978518528 (51.9%)
+Uptime: 4504s, Idle Time: 8738s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('python3', 0.2), ('kworker/0:0-mm_percpu_wq', 0.1)]
+Top Mem: [('gnome-shell', 11.447838223347851), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:41:10]
+CPU Usage: 0.5%
+Load Avg (1,5,15): 0.0, 0.0146484375, 0.03125
+Memory: Total: 4069044224, Used: 951431168, Available: 2845552640 (30.1%)
+Disk: Total: 26238750720, Used: 12901441536, Free: 11978514432 (51.9%)
+Uptime: 4515s, Idle Time: 8760s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('VBoxDRMClient', 0.2), ('python3', 0.2)]
+Top Mem: [('gnome-shell', 11.447737560888205), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:41:21]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.01318359375, 0.02978515625
+Memory: Total: 4069044224, Used: 951422976, Available: 2845552640 (30.1%)
+Disk: Total: 26238750720, Used: 12901441536, Free: 11978514432 (51.9%)
+Uptime: 4526s, Idle Time: 8782s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('gnome-terminal-server', 0.2), ('python3', 0.2)]
+Top Mem: [('gnome-shell', 11.447737560888205), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:41:32]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.01220703125, 0.02880859375
+Memory: Total: 4069044224, Used: 951406592, Available: 2845552640 (30.1%)
+Disk: Total: 26238750720, Used: 12901441536, Free: 11978514432 (51.9%)
+Uptime: 4537s, Idle Time: 8804s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('migration/0', 0.1), ('VBoxDRMClient', 0.1), ('gnome-shell', 0.1)]
+Top Mem: [('gnome-shell', 11.447737560888205), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:41:44]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.01123046875, 0.02783203125
+Memory: Total: 4069044224, Used: 951398400, Available: 2845589504 (30.1%)
+Disk: Total: 26238750720, Used: 12901441536, Free: 11978514432 (51.9%)
+Uptime: 4548s, Idle Time: 8826s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('VBoxDRMClient', 0.2), ('python3', 0.2)]
+Top Mem: [('gnome-shell', 11.447737560888205), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:41:55]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.01025390625, 0.02685546875
+Memory: Total: 4069044224, Used: 951390208, Available: 2845589504 (30.1%)
+Disk: Total: 26238750720, Used: 12901441536, Free: 11978514432 (51.9%)
+Uptime: 4559s, Idle Time: 8848s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('python3', 0.3), ('systemd-oomd', 0.1), ('VBoxDRMClient', 0.1)]
+Top Mem: [('gnome-shell', 11.447737560888205), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:42:06]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.00927734375, 0.02587890625
+Memory: Total: 4069044224, Used: 951382016, Available: 2845589504 (30.1%)
+Disk: Total: 26238750720, Used: 12901441536, Free: 11978514432 (51.9%)
+Uptime: 4570s, Idle Time: 8870s
+Total Processes: 203, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('rcu_preempt', 0.1), ('kworker/1:2-events', 0.1)]
+Top Mem: [('gnome-shell', 11.447737560888205), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:42:17]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.0078125, 0.0244140625
+Memory: Total: 4069044224, Used: 951369728, Available: 2845589504 (30.1%)
+Disk: Total: 26238750720, Used: 12901445632, Free: 11978510336 (51.9%)
+Uptime: 4581s, Idle Time: 8892s
+Total Processes: 204, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.3), ('kworker/0:0-events', 0.1), ('dbus-daemon', 0.1)]
+Top Mem: [('gnome-shell', 11.447435573509264), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:42:28]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.0068359375, 0.0234375
+Memory: Total: 4069044224, Used: 951357440, Available: 2845589504 (30.1%)
+Disk: Total: 26238750720, Used: 12901449728, Free: 11978506240 (51.9%)
+Uptime: 4593s, Idle Time: 8914s
+Total Processes: 204, Running: 0, Sleeping: 147
+Top CPU: [('gnome-shell', 0.9), ('gnome-terminal-server', 0.3), ('python3', 0.2)]
+Top Mem: [('gnome-shell', 11.447435573509264), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]
+
+[2026-01-31 03:42:39]
+CPU Usage: 0.0%
+Load Avg (1,5,15): 0.0, 0.005859375, 0.0224609375
+Memory: Total: 4069044224, Used: 951349248, Available: 2845589504 (30.1%)
+Disk: Total: 26238750720, Used: 12901449728, Free: 11978506240 (51.9%)
+Uptime: 4604s, Idle Time: 8935s
+Total Processes: 204, Running: 0, Sleeping: 147
+Top CPU: [('kworker/0:0-events', 0.1), ('VBoxDRMClient', 0.1), ('gnome-shell', 0.1)]
+Top Mem: [('gnome-shell', 11.447435573509264), ('mutter-x11-frames', 2.5592423740637136), ('gsd-xsettings', 2.107167267789322)]

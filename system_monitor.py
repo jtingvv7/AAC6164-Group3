@@ -1,9 +1,8 @@
-
+import os
+import csv
 import psutil
 import time
 from datetime import datetime
-import csv
-import os
 
 # Ensure logs folder exists 
 if not os.path.exists("logs"):
@@ -31,7 +30,7 @@ def get_top_processes(key, limit=3):
     for p in psutil.process_iter(['name', 'cpu_percent', 'memory_percent']):
         try:
             processes.append(p.info)
-        except psutil.NoSuchProcess:
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
             pass
     return sorted(processes, key=lambda x: x[key], reverse=True)[:limit]
 
@@ -41,8 +40,9 @@ def top_list(lst, key):
         if i < len(lst):
             result.extend([lst[i]['name'], lst[i][key]])
         else:
-            result.extend(["", ""])
-    return result 
+            # Adds placeholders if fewer than 3 processes are found
+            result.extend(["N/A", 0.0])
+    return result
 
 def start_system_monitor():
     print("Monitoring started. Press Ctrl+C to stop.")
@@ -55,7 +55,7 @@ def start_system_monitor():
 
         # Memory Metrics 
         mem = psutil.virtual_memory()
-        
+
         # Disk Metrics 
         disk = psutil.disk_usage('/')
 
@@ -64,10 +64,10 @@ def start_system_monitor():
             uptime_seconds, idle_seconds = map(float, f.readline().split())
 
         # Process Metrics
-        processes = list(psutil.process_iter(['status']))
-        total_proc = len(processes)
-        running = len([p for p in processes if p.info['status'] == psutil.STATUS_RUNNING])
-        sleeping = len([p for p in processes if p.info['status'] == psutil.STATUS_SLEEPING])
+        processes_list = list(psutil.process_iter(['status']))
+        total_proc = len(processes_list)
+        running = len([p for p in processes_list if p.info['status'] == psutil.STATUS_RUNNING])
+        sleeping = len([p for p in processes_list if p.info['status'] == psutil.STATUS_SLEEPING])
 
         # Top 3 Processes 
         top_cpu = get_top_processes('cpu_percent')
@@ -82,8 +82,11 @@ def start_system_monitor():
             f.write(f"Disk: Total: {disk.total}, Used: {disk.used}, Free: {disk.free} ({disk.percent}%)\n")
             f.write(f"Uptime: {int(uptime_seconds)}s, Idle Time: {int(idle_seconds)}s\n")
             f.write(f"Total Processes: {total_proc}, Running: {running}, Sleeping: {sleeping}\n")
+            # Optional: Add Top Processes to TXT for completeness
+            f.write(f"Top CPU: {[(p['name'], p['cpu_percent']) for p in top_cpu]}\n")
+            f.write(f"Top Mem: {[(p['name'], p['memory_percent']) for p in top_mem]}\n")
 
-        # Preparing data for CSV [cite: 68]
+        # Construct row for CSV
         row = [
             now, cpu_usage, load1, load5, load15,
             mem.total, mem.used, mem.available, mem.percent,
@@ -97,3 +100,6 @@ def start_system_monitor():
 
         print(f"[{now}] System metrics recorded")
         time.sleep(10)
+
+if __name__ == "__main__":
+    start_system_monitor()
